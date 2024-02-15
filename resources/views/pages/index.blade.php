@@ -7,10 +7,11 @@
     <ul>
         @foreach ($books as $book)
             <li class="mb-5">
-                <div><b>Titolo:</b> {{ $book->nome }}</div>
-                <div><b>Genere:</b> {{ $book->genere }}</div>
-                <div><b>Autore:</b> {{ $book->autore }}</div>
-                <div><b>Scaffale:</b> {{ $book->scaffale }}</div>
+
+                <a href="{{ route('users.show', $book->id) }}">
+                    <div><b>Titolo:</b> {{ $book->nome }}</div>
+                </a>
+
             </li>
         @endforeach
     </ul>

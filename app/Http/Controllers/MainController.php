@@ -49,7 +49,9 @@ class MainController extends Controller
      */
     public function show($id)
     {
-        //
+        $book = Book :: find($id);
+
+        return view('pages.show', compact('book'));
     }
 
     /**
