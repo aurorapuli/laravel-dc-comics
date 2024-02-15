@@ -5,6 +5,8 @@
 @section('content')
     <h1 class="mb-5">Dettagli fumetto:</h1>
 
+    <div>Fumetto N. {{ $book->id }}</div>
+
     <div><b>Tirolo: </b>{{ $book->nome }}</div>
     <div><b>Genere: </b>{{ $book->genere }}</div>
     <div><b>Autore: </b>{{ $book->autore }}</div>

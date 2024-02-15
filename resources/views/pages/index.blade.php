@@ -4,6 +4,7 @@
 @endsection
 @section('content')
     <h1>Fumetti</h1>
+    <a href="{{ route('users.create') }}">CREATE</a>
     <ul>
         @foreach ($books as $book)
             <li class="mb-5">

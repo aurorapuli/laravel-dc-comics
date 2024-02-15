@@ -27,7 +27,7 @@ class MainController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.create');
     }
 
     /**
@@ -38,7 +38,18 @@ class MainController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request -> all();
+
+        $newBook = new Book();
+
+        $newBook -> nome = $data['nome'];
+        $newBook -> genere = $data['genere'];
+        $newBook -> autore = $data['autore'];
+        $newBook -> scaffale = $data['scaffale'];
+
+        $newBook -> save();
+
+        return redirect() -> route('users.show', $newBook -> id);
     }
 
     /**
