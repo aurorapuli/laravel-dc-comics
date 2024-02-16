@@ -12,4 +12,4 @@ Route::post('/users', [MainController :: class, 'store']) -> name('users.store')
 
 Route::get('/users/{id}', [MainController :: class, 'show']) -> name('users.show');
 
-
+Route::delete('/users/{id}', [MainController :: class, 'destroy']) -> name('users.destroy');

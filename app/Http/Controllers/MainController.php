@@ -96,6 +96,9 @@ class MainController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $book = Book :: find($id);
+        $book -> delete();
+
+        return redirect() -> route('users.index');
     }
 }
