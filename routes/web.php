@@ -13,3 +13,7 @@ Route::post('/users', [MainController :: class, 'store']) -> name('users.store')
 Route::get('/users/{id}', [MainController :: class, 'show']) -> name('users.show');
 
 Route::delete('/users/{id}', [MainController :: class, 'destroy']) -> name('users.destroy');
+
+Route::get('/users/{id}/edit', [MainController :: class, 'edit']) -> name('users.edit');
+
+Route::put('/users/{id}', [MainController :: class, 'update']) -> name('users.update');

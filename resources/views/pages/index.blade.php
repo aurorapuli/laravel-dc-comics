@@ -13,6 +13,8 @@
                     <div><b>Titolo:</b> {{ $book->nome }}</div>
                 </a>
 
+                <a class="mx-5" href="{{ route('users.edit', $book->id) }}">Modifica</a>
+
                 <form action="{{ route('users.destroy', $book->id) }}" method="POST">
 
                     @csrf

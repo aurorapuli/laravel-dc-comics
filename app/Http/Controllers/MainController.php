@@ -73,7 +73,10 @@ class MainController extends Controller
      */
     public function edit($id)
     {
-        //
+        $book = Book :: find($id);
+
+        return view('pages.edit', compact('book'));
+
     }
 
     /**
@@ -85,7 +88,19 @@ class MainController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $book = Book :: find($id);
+
+        $data = $request -> all();
+
+        $book -> nome = $data['nome'];
+        $book -> genere = $data['genere'];
+        $book -> autore = $data['autore'];
+        $book -> scaffale = $data['scaffale'];
+
+        $book -> save();
+
+        return redirect() -> route('users.show', $book -> id);
     }
 
     /**
